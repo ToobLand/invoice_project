@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .            # Geeft aan dat Docker de Dockerfile uit de projectmap moet gebruiken
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    command: bash -c "composer install && apache2-foreground"
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: invoiceapp_db
+      MYSQL_USER: invoiceuser
+      MYSQL_PASSWORD: userpassword
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

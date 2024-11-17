@@ -1,0 +1,6 @@
+composer.phar
+/vendor/
+/public/uploads/costs/
+/public/uploads/invoice/
+/public/uploads/invoice/
+/config/

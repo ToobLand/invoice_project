@@ -1,0 +1,253 @@
+html,
+body {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	scroll-behavior: smooth;
+}
+
+.container {
+	padding: 5% 5%;
+}
+.toast {
+	position: fixed;
+	display: none;
+	width: 300px;
+	height: 100px;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px; /* Negative half of height. */
+	margin-left: -150px;
+	z-index: 99;
+}
+.nav_wrapper {
+	background: #333333;
+	color: white;
+	height: 55px;
+}
+.nav_wrapper .left-side {
+	float: left;
+	width: 70%;
+}
+.nav_wrapper .right-side {
+	float: right;
+	width: 30%;
+}
+.nav_wrapper .logo {
+	float: left;
+	margin: 10px;
+}
+.nav_wrapper ul {
+	list-style: none;
+  display:block;
+}
+.nav_wrapper li {
+	float: left;
+	margin: 15px;
+	color: white;
+}
+.nav_wrapper li a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+.nav_wrapper .right_stuff {
+	float: right;
+	margin: 15px;
+	color: white;
+}
+.nav_wrapper .right_stuff a {
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+
+#new_cost {
+	display: none;
+}
+.extra_cost {
+	padding: 5%;
+	margin: 5% 0%;
+	background-color: #f4f4f4;
+}
+
+.uploadwrapper label {
+	display: block;
+}
+
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.title {
+	margin-bottom: 40px;
+	font-weight: 300;
+}
+
+.delete_cost,
+.delete {
+	cursor: pointer;
+	transition: color 0.2s;
+}
+.delete_cost:hover,
+.delete:hover {
+	color: #e10097;
+}
+.enlarge {
+	transition: color 0.2s;
+	cursor: pointer;
+}
+.enlarge:hover {
+	color: #007bff;
+}
+/* Define an animation behavior */
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+/* This is the class name given by the Font Awesome component when icon contains 'spinner' */
+.fa-spinner {
+	/* Apply 'spinner' keyframes looping once every second (1s)  */
+	animation: spinner 1s linear infinite;
+}
+
+.cost_total {
+	margin-bottom: 50px;
+	background: #333333;
+	padding: 50px;
+	color: white;
+}
+a.active_q {
+	color: #333333 !important;
+	font-weight: bold;
+}
+.detail_header {
+	background: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+	height: 100px;
+}
+.detail_title {
+	text-align: center;
+	position: relative;
+	display: block;
+	margin: 15px auto;
+	padding: 15px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: white;
+	line-height: 30px;
+}
+.detail_icon {
+	float: right;
+	font-size: 1.2em;
+}
+#breadcrumb {
+	margin: 25px 0px;
+}
+.crumb {
+	margin-right: 10px;
+}
+#breadcrumb i {
+	color: #cccccc;
+	font-size: 0.7em;
+	margin-right: 10px;
+}
+span.crumb {
+	color: #cccccc;
+	font-weight: 600;
+}
+
+.col-sm {
+	max-width: 330px;
+}
+.row {
+	padding: 15px 0px;
+}
+.clickable {
+	cursor: pointer;
+}
+.clickable td {
+	transition: background-color 0.3s;
+}
+.clickable:hover td {
+	background-color: #e6e6e6;
+	color: black;
+}
+.hamburger{
+  display:none;
+  cursor:pointer;
+}
+.mobile_view{
+  display:none;
+}
+
+@media all and (max-width: 1100px) {
+
+  .hamburger{
+    display:inline-block;
+    z-index:9999;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+  }
+  .mobile_view{
+    display:inline-block;
+  }
+  .nav_wrapper ul.menu_wrapper{
+    
+height:auto;
+background:#333333;
+width:100%;
+display:block;
+display:none;
+position:absolute;
+z-index:999;
+  }
+  .nav_wrapper li{
+    float:none;
+  }
+.logged_in,.logout_button{
+  display:none;
+}
+}
+@media all and (max-width: 800px) {
+	
+	body {
+		font-size: 12px;
+	}
+
+	td.mobile_collapse,
+	th.mobile_collapse {
+		display: none;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: collapse;
+	}
+	table td,
+	table th {
+		font-size: 11px;
+	}
+
+	.nav_wrapper .left-side {
+		width: 100%;
+	}
+	
+}
+@media print {
+	body * {
+		overflow: visible;
+		visibility: hidden;
+	}
+	#section-to-print,
+	#section-to-print * {
+		visibility: visible;
+		overflow: visible;
+	}
+	#section-to-print {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display:block;
+	}
+}
